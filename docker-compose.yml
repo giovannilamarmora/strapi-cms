@@ -2,16 +2,15 @@ version: "3.1"
 
 services:
   backend-service:
-    container_name: ${CONTAINER_NAME}
+    #container_name: ${CONTAINER_NAME}
     image: ${DOCKER_REPOSITORY}:latest
     hostname: strapi
     ports:
       - "1337:1337"
-    networks:
-      docker-network:
-        aliases:
-          - strapi
-
-networks:
-  docker-network:
-    external: true
+    #networks:
+    #  docker-network:
+    #    aliases:
+    #      - strapi
+#networks:
+#  docker-network:
+#    external: true
