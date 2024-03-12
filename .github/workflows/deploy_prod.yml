@@ -7,14 +7,10 @@ on:
     branches: [master]
 
 env:
-  NODE_VERSION: "16.13.2"
+  NODE_VERSION: "20.11.1"
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   DOCKER_REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
-  ORGANIZATION_USERNAME: ${{ secrets.ORGANIZATION_USERNAME }}
-  DESTINATION_REPOSITORY: ${{ secrets.DESTINATION_REPOSITORY }}
-  API_TOKEN: ${{ secrets.API_TOKEN }}
-  EMAIL: ${{ secrets.EMAIL }}
 
 jobs:
   checkout-and-setup:
@@ -42,7 +38,7 @@ jobs:
           npm install -g @angular/cli
           npm install --force
       - name: 📂 Build
-        run: npm run staging
+        run: npm run build
 
   docker-login:
     name: 🐳 Docker Login
@@ -59,7 +55,7 @@ jobs:
     name: 🚀 Deploy
     runs-on: ubuntu-latest
     environment:
-      name: prod-moneystats-angular
+      name: production
     needs: [dependency-and-build, docker-login]
     steps:
       - uses: actions/checkout@v4
