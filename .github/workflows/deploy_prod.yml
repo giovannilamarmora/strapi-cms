@@ -73,6 +73,6 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
-          buildArgs: config=prod
+          buildArgs: NODE_ENV=production
           multiPlatform: true
           platform: linux/amd64,linux/arm64
