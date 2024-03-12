@@ -1,11 +1,10 @@
-FROM node:19.2.0-alpine AS builder
+FROM node:20.11.1-alpine AS builder
 WORKDIR '/app'
 COPY . .
-ARG config
 
 RUN npm install @angular/cli -g
 RUN npm install --force && \
-  npm run $config
+  npm run build
 
 FROM nginx:alpine
 COPY --from=builder /app/dist/* /usr/share/nginx/html/
