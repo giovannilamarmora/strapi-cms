@@ -5,8 +5,21 @@ services:
     #container_name: ${CONTAINER_NAME}
     image: ${DOCKER_REPOSITORY}:latest
     hostname: strapi
+    build: .
+    restart: unless-stopped
+    env_file: .env
     ports:
       - "1337:1337"
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapiDB
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
     #networks:
     #  docker-network:
     #    aliases:
