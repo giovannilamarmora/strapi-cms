@@ -34,3 +34,7 @@ services:
 networks:
   docker-network:
     external: true
+volumes:
+  strapi:
+    external: true
+    name: strapi
