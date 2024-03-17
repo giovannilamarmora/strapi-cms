@@ -1,8 +1,8 @@
-version: "3.1"
+version: "3.8"
 
 services:
   backend-service:
-    #container_name: ${CONTAINER_NAME}
+    container_name: ${CONTAINER_NAME}
     image: ${DOCKER_REPOSITORY}:latest
     hostname: strapi
     build: .
@@ -20,10 +20,17 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
-    #networks:
-    #  docker-network:
-    #    aliases:
-    #      - strapi
-#networks:
-#  docker-network:
-#    external: true
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+    networks:
+      docker-network:
+        aliases:
+          - strapi
+networks:
+  docker-network:
+    external: true
