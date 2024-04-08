@@ -112,3 +112,11 @@ Run this command on your client database:
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 flush privileges;
 ``` 
+
+If still not working run this:
+```mysql
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'password';
+flush privileges;
+``` 
+
+as root your username and password your current password
