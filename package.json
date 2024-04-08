@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "test-my-sql",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -9,12 +9,14 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-cloud": "4.20.4",
-    "@strapi/plugin-i18n": "4.20.4",
-    "@strapi/plugin-users-permissions": "4.20.4",
-    "@strapi/strapi": "4.20.4",
+    "@strapi/strapi": "4.22.1",
+    "@strapi/plugin-users-permissions": "4.22.1",
+    "@strapi/plugin-i18n": "4.22.1",
+    "@strapi/plugin-cloud": "4.22.1",
     "better-sqlite3": "8.6.0",
+    "mysql": "2.18.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
@@ -24,7 +26,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "f55dc9b1-0a76-47a6-b880-9bc49cee265c"
+    "uuid": "83ed35aa-e3e1-4e2f-9a11-ef035df58297"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
