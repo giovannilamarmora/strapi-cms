@@ -55,3 +55,60 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+
+## Environment Variables  
+To run this project, you will need to add the following environment variables to your .env file  
+`NODE_ENV`	The environment in which the application is running.
+
+`DATABASE_CLIENT`	The database client to use.
+
+`DATABASE_HOST`	The database host.
+
+`DATABASE_PORT`	The database port.
+
+`DATABASE_NAME`	The database name.
+
+`DATABASE_USERNAME`	The database username.
+
+`DATABASE_PASSWORD`	The database password.
+
+`JWT_SECRET`	The secret used to sign the JWT for the Users-Permissions plugin.
+
+`ADMIN_JWT_SECRET`	The secret used to sign the JWT for the Admin panel.
+
+`APP_KEYS`	The secret keys used to sign the session cookies.`  
+## Run Locally  
+Clone the project  
+
+~~~bash  
+  git clone https://link-to-project
+~~~
+
+Go to the project directory  
+
+~~~bash  
+  cd my-project
+~~~
+
+Install dependencies  
+
+~~~bash  
+npm install
+~~~
+
+Start the server  
+
+~~~bash  
+npm run start
+~~~  
+
+## FAQ  
+
+#### ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+
+Run this command on your client database:
+```mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+flush privileges;
+``` 
