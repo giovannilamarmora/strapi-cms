@@ -2,24 +2,28 @@ version: "3.8"
 
 services:
   backend-service:
-    container_name: ${CONTAINER_NAME}
-    image: ${DOCKER_REPOSITORY}:latest
-    hostname: strapi
+    container_name: strapi-cms
+    image: giovannilamarmora/strapi-cms:latest
+    hostname: app.strapi.cms
     build: .
     restart: unless-stopped
     env_file: .env
     ports:
       - "1337:1337"
     environment:
-      #DATABASE_CLIENT: ${DATABASE_CLIENT}
-      #DATABASE_HOST: strapiDB
-      #DATABASE_PORT: ${DATABASE_PORT}
-      #DATABASE_NAME: ${DATABASE_NAME}
-      #DATABASE_USERNAME: ${DATABASE_USERNAME}
-      #DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapiDB
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_SSL: ${DATABASE_SSL}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
     volumes:
       #- ./config:/opt/app/config
       #- ./src:/opt/app/src
@@ -31,11 +35,11 @@ services:
     networks:
       docker-network:
         aliases:
-          - strapi
+          - app.strapi.cms
 networks:
   docker-network:
     external: true
 volumes:
   strapi:
     external: true
-    name: strapi
+    name: app.strapi.cms
