@@ -22,7 +22,6 @@ services:
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
     volumes:
       #- ./config:/opt/app/config
