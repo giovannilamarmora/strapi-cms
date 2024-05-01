@@ -10,6 +10,7 @@ services:
     env_file: .env
     ports:
       - "1337:1337"
+    command: sh -c "chown -R node:node /opt/app/src/api && npm run develop"
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
@@ -30,10 +31,7 @@ services:
       #- ./yarn.lock:/opt/yarn.lock
       #- ./.env:/opt/app/.env
       #- ./public/uploads:/opt/app/public/uploads
-      - strapi:/usr/src/api/strapi-app/api/db
-      - strapi:/usr/src/api/strapi-app/api
       - strapi:/usr/src/api/strapi-app
-      - strapi:/usr/src/api
       - strapi:/srv/app
     networks:
       docker-network:
