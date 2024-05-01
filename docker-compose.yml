@@ -11,7 +11,7 @@ services:
     ports:
       - "1337:1337"
     #command: sh -c "mkdir -p /opt/app/src/api && chown -R node:node /opt/app/src/api && npm run develop"
-    command: sh -c "npm run strapi ts:generate-types && npm run develop"
+    command: sh -c "rm -d /opt/app/src/api && npm run strapi ts:generate-types && npm run develop"
     user: root # Aggiunta questa riga
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
