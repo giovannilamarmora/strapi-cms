@@ -27,13 +27,14 @@ services:
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
     volumes:
-      - ./config:/opt/app/config
+      #- ./config:/opt/app/config
       #- ./src:/opt/app/src
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
-      #- strapi:/usr/src/api/strapi-app
-      #- strapi:/srv/app
+      #- ./yarn.lock:/opt/yarn.lock
+      #- ./.env:/opt/app/.env
+      #- ./public/uploads:/opt/app/public/uploads
+      - strapi:/usr/src/api/strapi-app
+      - strapi:/srv/app
+      - strapi:/opt/app/src
     networks:
       docker-network:
         aliases:
