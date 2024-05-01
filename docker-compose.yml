@@ -32,9 +32,9 @@ services:
       #- ./yarn.lock:/opt/yarn.lock
       #- ./.env:/opt/app/.env
       #- ./public/uploads:/opt/app/public/uploads
-      - strapi:/usr/src/api/strapi-app
-      - strapi:/srv/app
-      - strapi:/opt/app/src/api
+      #- strapi:/usr/src/api/strapi-app
+      #- strapi:/srv/app
+      - strapi:/opt/app/src
     networks:
       docker-network:
         aliases:
