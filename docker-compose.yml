@@ -11,7 +11,7 @@ services:
     ports:
       - "1337:1337"
     command: sh -c "mkdir -p /opt/app/src/api && chown -R node:node /opt/app/src/api && npm run develop"
-    user: root  # Aggiunta questa riga
+    user: root # Aggiunta questa riga
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
@@ -29,6 +29,8 @@ services:
     volumes:
       #- ./config:/opt/app/config
       - ./src:/opt/app/src
+      - src:/opt/app/src
+      - api:/opt/app/src/api
       #- ./yarn.lock:/opt/yarn.lock
       #- ./.env:/opt/app/.env
       #- ./public/uploads:/opt/app/public/uploads
