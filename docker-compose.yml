@@ -34,7 +34,7 @@ services:
       #- ./public/uploads:/opt/app/public/uploads
       - strapi:/usr/src/api/strapi-app
       - strapi:/srv/app
-      - api:/opt/app/src/api
+      #- api:/opt/app/src/api
     networks:
       docker-network:
         aliases:
