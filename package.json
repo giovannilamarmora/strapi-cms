@@ -1,6 +1,6 @@
 {
   "name": "strapi-cms",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "description": "A Strapi application",
   "license": "MIT",
@@ -16,10 +16,10 @@
   "dependencies": {
     "@ef2/strapi-plugin-bold-title-editor": "^1.0.9",
     "@palmabit/strapi-app-version": "^1.2.0",
-    "@strapi/plugin-cloud": "4.22.1",
-    "@strapi/plugin-i18n": "4.22.1",
-    "@strapi/plugin-users-permissions": "4.22.1",
-    "@strapi/strapi": "4.22.1",
+    "@strapi/plugin-cloud": "4.24.0",
+    "@strapi/plugin-i18n": "4.24.0",
+    "@strapi/plugin-users-permissions": "4.24.0",
+    "@strapi/strapi": "4.24.0",
     "better-sqlite3": "8.6.0",
     "mysql": "2.18.1",
     "react": "^18.0.0",
