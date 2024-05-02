@@ -35,7 +35,7 @@ services:
       #- ./public/uploads:/opt/app/public/uploads
       #- strapi:/usr/src/api/strapi-app
       #- strapi:/srv/app
-      - strapi:/opt/app/public/uploads
+      - strapi_uploads:/opt/app/public/uploads
       - strapi:/opt/app/types
       - strapi:/opt/app/src
     networks:
@@ -49,3 +49,6 @@ volumes:
   strapi:
     external: true
     name: strapi
+  strapi_uploads:
+    external: true
+    name: strapi_uploads
