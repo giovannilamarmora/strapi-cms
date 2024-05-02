@@ -32,12 +32,12 @@ services:
       #- ./src:/opt/app/src
       #- ./yarn.lock:/opt/yarn.lock
       #- ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
+      #- ./public/uploads:/opt/app/public/uploads
       #- strapi:/usr/src/api/strapi-app
       #- strapi:/srv/app
-      #- strapi_uploads:/opt/app/public/uploads
-      - strapi_cms:/opt/app/types
-      - strapi_cms:/opt/app/src
+      - strapi_uploads:/opt/app/public/uploads
+      - strapi:/opt/app/types
+      - strapi:/opt/app/src
     networks:
       docker-network:
         aliases:
@@ -46,9 +46,9 @@ networks:
   docker-network:
     external: true
 volumes:
-  strapi_cms:
+  strapi:
     external: true
-    name: strapi_cms
+    name: strapi
   strapi_uploads:
     external: true
     name: strapi_uploads
