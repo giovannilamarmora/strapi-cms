@@ -46,9 +46,9 @@ networks:
   docker-network:
     external: true
 volumes:
-  strapi:
+  strapi_cms:
     external: true
-    name: strapi
+    name: strapi_cms
   strapi_uploads:
     external: true
     name: strapi_uploads
