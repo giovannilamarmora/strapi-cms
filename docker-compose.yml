@@ -27,6 +27,8 @@ services:
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      REFRESH_SECRET: ${REFRESH_SECRET}
+      REFRESH_TOKEN_EXPIRES: ${REFRESH_EXPIRATION}
     volumes:
       #- ./config:/opt/app/config
       #- ./src:/opt/app/src
