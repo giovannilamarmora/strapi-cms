@@ -18,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "☁️ Checkout Repository"
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
         with:
           persist-credentials: false
 
       - name: 🔧 Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: "${{ env.NODE_VERSION }}"
 
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkout-and-setup
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.2.2
       - name: 📦 Dependency Injection
         run: |
           npm install -g @angular/cli
@@ -46,7 +46,7 @@ jobs:
     needs: dependency-and-build
     steps:
       - name: 🐳 Log in to Docker Hub
-        uses: docker/login-action@v3.1.0
+        uses: docker/login-action@v3.3.0
         with:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
@@ -58,7 +58,7 @@ jobs:
       name: production
     needs: [dependency-and-build, docker-login]
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.2.2
 
       - name: ✅ Get current package version
         id: package-version
