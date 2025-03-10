@@ -8,9 +8,9 @@ on:
 
 env:
   NODE_VERSION: "20.11.1"
-  DOCKER_USERNAME: ${{ env.DOCKER_USERNAME }}
+  DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
+  DOCKER_REPOSITORY: ${{ vars.DOCKER_REPOSITORY }}
 
 jobs:
   checkout-and-setup:
