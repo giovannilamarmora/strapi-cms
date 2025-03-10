@@ -1,10 +1,10 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Deploy-PROD
+name: Deploy-STG
 on:
   push:
-    branches: [master]
+    branches: [develop]
 
 env:
   NODE_VERSION: "20.11.1"
@@ -55,7 +55,7 @@ jobs:
     name: 🚀 Deploy
     runs-on: ubuntu-latest
     environment:
-      name: production
+      name: staging
     needs: [dependency-and-build, docker-login]
     steps:
       - uses: actions/checkout@v4.2.2
@@ -73,6 +73,6 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
-          buildArgs: NODE_ENV=production
+          buildArgs: NODE_ENV=staging
           multiPlatform: true
           platform: linux/amd64,linux/arm64
