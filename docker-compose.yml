@@ -3,7 +3,7 @@ name: strapi-cms
 version: "3.8"
 
 services:
-  backend-service:
+  strapi-cms:
     container_name: strapi-cms
     image: giovannilamarmora/strapi-cms:latest
     hostname: app.strapi.cms
@@ -49,8 +49,9 @@ services:
 networks:
   docker-network:
     external: true
+
 volumes:
-  strapi:
+  strapi_data:
     name: strapi_data
   strapi_uploads:
     name: strapi_uploads
