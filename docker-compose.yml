@@ -1,3 +1,5 @@
+name: strapi-cms
+
 version: "3.8"
 
 services:
