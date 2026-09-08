@@ -38,8 +38,8 @@ services:
       #- strapi:/usr/src/api/strapi-app
       #- strapi:/srv/app
       - strapi_uploads:/opt/app/public/uploads
-      - strapi:/opt/app/types
-      - strapi:/opt/app/src
+      - strapi_data:/opt/app/types
+      - strapi_data:/opt/app/src
     networks:
       docker-network:
         aliases:
@@ -49,8 +49,6 @@ networks:
     external: true
 volumes:
   strapi:
-    external: true
-    name: strapi
+    name: strapi_data
   strapi_uploads:
-    external: true
     name: strapi_uploads
